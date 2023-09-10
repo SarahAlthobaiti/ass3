@@ -1,8 +1,8 @@
 //Student Name: Sarah Mohammed Althobiti  Student ID: 444004881
-public class CircularyLinkedList<E>{
+public class CircularlyLinkedList<E>{
     private static class Node<E>{
         private E element;
-        private NODE<E> next;
+        private Node<E> next;
         public Node(){}
         public Node(E e, Node<E> n){
             element = e;
@@ -20,7 +20,7 @@ public class CircularyLinkedList<E>{
     }
     private Node<E> tail = null;
     private int size = 0 ;
-    public CircularyLinkedList(){}
+    public CircularlyLinkedList(){}
     public int size(){
         return size;
     }
@@ -42,6 +42,16 @@ public class CircularyLinkedList<E>{
     public void rotate(){
         if(tail != null){
             tail = tail.getNext();
+        }
+    }
+    public void traversal(){
+        Node<E> c = tail.getNext();
+        if (tail != null){
+            do{
+                System.out.println(c.getElement());
+                c = c.getNext();
+              
+            }while(c != tail.getNext());
         }
     }
     public void addFirst(E e){
